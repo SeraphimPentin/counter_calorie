@@ -2,7 +2,6 @@ import {calories} from "./utils.js";
 
 const form = document.counter   //querySelector('.counter__form');
 
-const resultField = document.querySelector('.counter__result');
 const result = document.querySelector('.counter__result');
 
 // поля для ввода и выбор пола
@@ -79,7 +78,7 @@ function resetData() {
     form.activity.value = 'min';
     reset.disabled = true;
     button.disabled = true;
-    resultField.classList.add('counter__result--hidden');
+    result.classList.add('counter__result--hidden');
 }
 
 const calculate = () => {
@@ -96,5 +95,5 @@ function show(evnt) {
     result.querySelector('#calories-norm').textContent =  normCalories;
     result.querySelector('#calories-minimal').textContent  = (normCalories * 0.85).toFixed(2);
     result.querySelector('#calories-maximal').textContent =  (normCalories * 1.15).toFixed(2);
-    resultField.classList.remove('counter__result--hidden');
+    result.classList.remove('counter__result--hidden');
 }
